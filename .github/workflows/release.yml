@@ -11,3 +11,13 @@ jobs:
         env:
           GH_DEBUG: api
           GH_TOKEN: ${{ github.token }}
+
+  job-pat:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - run: gh release create --repo ${{ github.repository }} v98.0
+        env:
+          GH_DEBUG: api
+          GH_TOKEN: ${{ secrets.PAT }}
