@@ -4,8 +4,6 @@ on:
 jobs:
   job-name:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - run: gh release create --repo ${{ github.repository }} v99.0
         env:
